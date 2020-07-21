@@ -7,8 +7,9 @@ from pygame.locals import *
 
 pygame.init()
 clock = pygame.time.Clock()
+pygame.display.set_caption('Orbital Simulator')
 
-WINDOW_SIZE = (1700, 900)
+WINDOW_SIZE = (1920, 1080)
 screen = pygame.display.set_mode(WINDOW_SIZE)
 screen_rect = screen.get_rect()
 display = pygame.display.set_mode(WINDOW_SIZE)
@@ -60,12 +61,11 @@ class Planet():
         self.mass = math.pi * (self.radius ** 2) * MASS_AREA_RATIO
         self.x, self.y = mx, my
 
-
     def getVelocity(self):
         if not self.doneCreating:
             self.current_pos = [mx, my] 
             self.dpos = [(self.current_pos[0] - self.last_pos[0])/2, (self.current_pos[1] - self.last_pos[1])/2] #dividing by two to make it less sensitive
-            self.last_pos = [mx, my] # Comparing mouse pos from one frame ago to current frame to see how much to make the velocity
+            self.last_pos = [mx, my] # Comparing mouse pos from one frame ago to current frame to get the velocity of the mouse movement
             self.velocity = self.dpos
        
         if self.doneCreating:
