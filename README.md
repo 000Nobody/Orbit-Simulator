@@ -1,5 +1,6 @@
 # Orbit Simutlator
  An intuitive simulation of gravitational pull between planets.
+ * View a demo video [here](https://www.youtube.com/watch?v=AYotPcp_fOI)
 
 
 ## Using the application
