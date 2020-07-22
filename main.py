@@ -12,7 +12,7 @@ pygame.display.set_caption("Orbital Simulator")
 WINDOW_SIZE = (1920, 1080)
 screen = pygame.display.set_mode(WINDOW_SIZE)
 screen_rect = screen.get_rect()
-display = pygame.display.set_mode(WINDOW_SIZE)
+display = pygame.Surface(WINDOW_SIZE)
 display_rect = display.get_rect()
 
 G = 6.67408 * (10 ** -11)  # Gravitational Constant
