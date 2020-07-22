@@ -30,6 +30,7 @@ class Planet:
         self.x = x
         self.y = y
         self.radius = radius
+        self.volume = radius ** 3
         self.mass = mass
         self.id = id
         self.rect = pygame.Rect(
@@ -91,6 +92,7 @@ class Planet:
         if self.radius <= 200:
             self.radius += 0.35
         self.mass = math.pi * (self.radius ** 2) * MASS_AREA_RATIO
+        self.volume = self.radius ** 3
         self.x, self.y = mx, my
 
     def getVelocity(self):
@@ -133,7 +135,8 @@ class Planet:
                 ):
                     planets.remove(planet)
                     if self.radius <= 200:
-                        self.radius += planet.radius
+                        self.volume += planet.volume
+                        self.radius = self.volume ** (1. /3.)
 
     def draw(self):
         pygame.draw.circle(
