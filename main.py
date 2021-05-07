@@ -243,6 +243,10 @@ while True:
             planets.remove(planet)
         if planet.velocity[1] > 1000 or planet.velocity[1] < -1000:
             planets.remove(planet)
+    
+    if tab_down:
+        for planet in planets:
+            planets.remove(planet)
 
     for particle in particles:
         particle.update()
