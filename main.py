@@ -23,6 +23,7 @@ particles = []
 planet_id = 0
 mouse_down = False
 ctrl_down = False
+tab_down = False
 
 
 class Planet:
@@ -224,6 +225,12 @@ while True:
 
         if event.type == KEYUP and event.key == pygame.K_LCTRL:
             ctrl_down = False
+
+        if event.type == KEYDOWN and event.key == pygame.K_TAB:
+            tab_down = True
+
+        if event.type == KEYUP and event.key == pygame.K_TAB:
+            tab_down = False
 
     for planet in planets:
         if len(planets) >= 50:
