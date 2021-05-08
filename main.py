@@ -225,6 +225,9 @@ while True:
         if event.type == KEYUP and event.key == pygame.K_LCTRL:
             ctrl_down = False
 
+        if event.type == KEYDOWN and event.key == pygame.K_TAB:
+            planets.clear()
+
     for planet in planets:
         if len(planets) >= 50:
             planets.remove(planet)
@@ -236,7 +239,7 @@ while True:
             planets.remove(planet)
         if planet.velocity[1] > 1000 or planet.velocity[1] < -1000:
             planets.remove(planet)
-
+    
     for particle in particles:
         particle.update()
         if particle.radius <= 0:
