@@ -23,7 +23,6 @@ particles = []
 planet_id = 0
 mouse_down = False
 ctrl_down = False
-tab_down = False
 
 
 class Planet:
@@ -227,10 +226,7 @@ while True:
             ctrl_down = False
 
         if event.type == KEYDOWN and event.key == pygame.K_TAB:
-            tab_down = True
-
-        if event.type == KEYUP and event.key == pygame.K_TAB:
-            tab_down = False
+            planets.clear()
 
     for planet in planets:
         if len(planets) >= 50:
@@ -244,10 +240,6 @@ while True:
         if planet.velocity[1] > 1000 or planet.velocity[1] < -1000:
             planets.remove(planet)
     
-    if tab_down:
-        for planet in planets:
-            planets.remove(planet)
-
     for particle in particles:
         particle.update()
         if particle.radius <= 0:
