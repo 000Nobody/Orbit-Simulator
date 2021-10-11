@@ -236,7 +236,10 @@ while True:
         if planet.y > 50000 or planet.y < -50000:
             planets.remove(planet)
         if planet.velocity[0] > 1000 or planet.velocity[0] < -1000:
-            planets.remove(planet)
+            try:
+                planets.remove(planet)
+            except ValueError:
+                pass
         if planet.velocity[1] > 1000 or planet.velocity[1] < -1000:
             planets.remove(planet)
     
